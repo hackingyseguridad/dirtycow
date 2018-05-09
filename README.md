@@ -13,3 +13,7 @@ Custom payloads (32 and 64 bit x86):
 
 - Basic interactive shell.
 - Run /tmp/pl.sh as root (you make this file).
+
+
+gcc -m32 -o output32 hello.c (32 bit)
+gcc -m64 -o output hello.c (64 bit)
