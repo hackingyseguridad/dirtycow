@@ -9,15 +9,15 @@ cvss: 7.8 (CVSS v3.1)
 affected_versions: "2.6.22 - 4.8.2"
 ---
 
-# Dirty COW (CVE-2016-5195) - Exploit de Escalada de Privilegios
+### Dirty COW (CVE-2016-5195) - Exploit de Escalada de Privilegios
 
-## 📋 Descripción General
+### Descripción
 
 **Dirty COW** (Copy-On-Write) es una vulnerabilidad de escalada de privilegios crítica en el kernel de Linux que afecta a versiones desde **2.6.22 (2007) hasta 4.8.2 (2016)**. Esta subrutina en C implementa un exploit funcional basado en el método **ptrace_pokedata** ("pokémon") que permite a un usuario no privilegiado obtener acceso root.
 
 La vulnerabilidad reside en el mecanismo de copia-al-escribir (Copy-On-Write, COW) del kernel de Linux. Un atacante puede explotar una carrera de datos para modificar archivos de solo lectura propiedad de otros usuarios, incluido el binario `/usr/bin/passwd`, permitiendo la escalada de privilegios sin credenciales válidas.
 
-### 📊 Información de Vulnerabilidad
+### Información de Vulnerabilidad
 
 | Propiedad | Valor |
 |-----------|-------|
@@ -33,7 +33,7 @@ La vulnerabilidad reside en el mecanismo de copia-al-escribir (Copy-On-Write, CO
 
 ---
 
-## 🎯 Vector de Ataque
+### Vector de Ataque
 
 ### Mecanismo de Explotación
 
@@ -56,7 +56,7 @@ El exploit aprovecha una condición de carrera en el mecanismo Copy-On-Write (CO
 
 ---
 
-## 🚀 Fases Operacionales
+###  Fases Operacionales
 
 ### Fase 1: Reconocimiento del Sistema
 
@@ -240,7 +240,7 @@ rm -f /tmp/pl.sh /tmp/passwd.bak
 
 ---
 
-## 📁 Estructura del Repositorio
+### Estructura del Repositorio
 
 ```
 dirtycow/
@@ -370,7 +370,7 @@ fi
 
 ---
 
-## 🔧 Compilación Manual
+### 🔧 Compilación Manual
 
 Si el Makefile no funciona o necesitas ajustes específicos:
 
@@ -406,7 +406,7 @@ sudo dnf install gcc glibc-devel glibc-devel.i686
 
 ---
 
-## 🛡️ Detección y Mitigación
+### Detección y Mitigación
 
 ### Detección de Intento de Explotación
 
@@ -504,7 +504,7 @@ Este código y herramientas se proporcionan **únicamente con fines educativos y
 
 ---
 
-## 🔐 Mejores Prácticas de Seguridad
+### Mejores Prácticas de Seguridad
 
 ### Entorno de Prueba Seguro
 
@@ -540,7 +540,7 @@ sudo ausearch -k dirtycow_test
 
 ---
 
-## 📊 Estado del Exploit en Diferentes Distribuciones
+### Estado del Exploit en Diferentes Distribuciones
 
 | Distribución | Versión Vulnerable | Parcheada | Estado |
 |--------------|-------------------|-----------|--------|
@@ -554,7 +554,7 @@ sudo ausearch -k dirtycow_test
 
 ---
 
-## 🧪 Testing y Validación
+### Testing y Validación
 
 ### Script de Validación de Vulnerabilidad
 
@@ -607,7 +607,7 @@ fi
 
 ---
 
-## 🚀 Siguientes Pasos y Recursos
+### Siguientes Pasos y Recursos
 
 ### Para Investigadores de Seguridad
 
@@ -643,7 +643,6 @@ fi
 └─────────────────────────────────────────────────────────────────┘
 ```
 
----
 #
 http://www.hackingysguridad.com/
 #
